@@ -1,0 +1,18 @@
+.backgroundPage {
+  &__shape1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  &__shape2 {
+    position: fixed;
+    top: 40%;
+    right: -36px;
+    transform: rotate(-41deg);
+  }
+  &__shape3 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
