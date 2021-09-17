@@ -1,0 +1,163 @@
+.aboutMe {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 15% 60% 25%;
+  justify-content: center;
+
+  &__mainTitle {
+    align-self: center;
+    text-align: justify;
+    font-weight: 600;
+    font-size: 40px;
+    width: 195px;
+    color: $titleTextOne;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      -3px -3px 0 rgba(255, 255, 255, 0.5);
+    span {
+      color: $titleTextTwo;
+    }
+  }
+
+  &_hamburger {
+    position: fixed;
+    top: 20px;
+    right: 5px;
+  }
+
+  &__info {
+    justify-self: center;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 55% 45%;
+    grid-template-areas:
+      'photo text1'
+      'text2 text2';
+    padding: 15px 5px;
+    width: 275px;
+    height: 300px;
+    border-radius: 25px;
+    background: $texbackground;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+
+    &-photo {
+      grid-area: photo;
+      margin: 0 auto;
+      img {
+        border-radius: 25px;
+      }
+    }
+
+    p {
+      line-height: 1.2;
+      font-size: 15px;
+    }
+
+    &-text1 {
+      grid-area: text1;
+      justify-self: center;
+      width: 156px;
+    }
+    &-text2 {
+      grid-area: text2;
+      justify-self: center;
+      width: 250px;
+    }
+  }
+
+  &__cv {
+    display: grid;
+    grid-template-areas:
+      'title title'
+      'resumepl resumeen';
+    grid-template-rows: 30% 70%;
+    justify-content: space-around;
+
+    padding: 10px 0;
+    width: 280px;
+    &-title {
+      grid-area: title;
+      align-self: center;
+      text-align: center;
+      font-size: 20px;
+
+      color: $titleTextOne;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &-pl {
+      grid-area: resumepl;
+    }
+    &-en {
+      grid-area: resumeen;
+    }
+
+    &-pl,
+    &-en {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: 10px;
+      width: 100px;
+      height: 45px;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 13px;
+      border-radius: 10px;
+      color: $normalText;
+      background-color: #df9f7c;
+      transition: 0.3s;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &-pl::before,
+    &-pl::after,
+    &-en::before,
+    &-en::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    &-pl::before,
+    &-en::before {
+      z-index: -1;
+      background-color: #df9f7c;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &-pl::after,
+    &-en::after {
+      z-index: -2;
+      background-color: #935b42;
+      transform: translate(0.5rem, 0.5rem);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &-pl:hover,
+    &-en:hover {
+      transform: translate(0.5rem, 0.5rem);
+      color: #df9f7c;
+    }
+
+    &-pl:hover::before,
+    &-en:hover::before {
+      background-color: #935b42;
+    }
+
+    &-pl:hover::after,
+    &-en:hover::after {
+      background-color: #df9f7c;
+      transform: translate(-0.5rem, -0.5rem);
+    }
+  }
+}

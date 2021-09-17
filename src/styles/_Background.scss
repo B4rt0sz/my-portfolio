@@ -2,18 +2,18 @@
   &__shape1 {
     position: fixed;
     top: 0;
-    z-index: -1;
+    z-index: -3;
   }
   &__shape2 {
     position: fixed;
     top: 40%;
     right: -36px;
     transform: rotate(-41deg);
-    z-index: -1;
+    z-index: -3;
   }
   &__shape3 {
     position: fixed;
     bottom: 0;
-    z-index: -1;
+    z-index: -3;
   }
 }
