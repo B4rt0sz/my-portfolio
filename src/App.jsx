@@ -6,6 +6,7 @@ import LoadingScreen from './layouts/LoadingScreen'
 import Background from './layouts/Background'
 import MainPage from './layouts/MainPage'
 import AboutMe from './layouts/AboutMe'
+import Skills from './layouts/Skills'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -19,7 +20,8 @@ function App() {
         <div className='wrapper'>
           <Switch>
             <Route path='/' exact component={MainPage} />
-            <Route path='/about_me' exact component={AboutMe} />
+            <Route path='/about_me' component={AboutMe} />
+            <Route path='/skills' component={Skills} />
           </Switch>
           <Background />
         </div>
