@@ -8,6 +8,7 @@ import MainPage from './layouts/MainPage'
 import AboutMe from './layouts/AboutMe'
 import Skills from './layouts/Skills'
 import Contact from './layouts/Contact'
+import Error from './layouts/Error'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -24,6 +25,7 @@ function App() {
             <Route path='/about_me' component={AboutMe} />
             <Route path='/skills' component={Skills} />
             <Route path='/contact' component={Contact} />
+            <Route component={Error} />
           </Switch>
           <Background />
         </div>
