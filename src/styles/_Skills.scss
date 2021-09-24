@@ -18,10 +18,10 @@
     }
   }
 
-  &_hamburger {
-    position: fixed;
-    top: 20px;
-    right: 5px;
+  &__hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   &__section {

@@ -10,7 +10,7 @@ const AboutMe = () => {
         about me<span>:</span>
       </h1>
 
-      <div className='aboutMe_hamburger'>
+      <div className='aboutMe__hamburger'>
         <Hamburger />
       </div>
 

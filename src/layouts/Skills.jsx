@@ -43,7 +43,7 @@ const Skills = () => {
       <h1 className='skills__mainTitle'>
         skills<span>:</span>
       </h1>
-      <div className='skills_hamburger'>
+      <div className='skills__hamburger'>
         <Hamburger />
       </div>
       <section className='skills__section'>

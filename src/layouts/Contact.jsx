@@ -13,7 +13,7 @@ const Contact = () => {
         contact<span>:</span>
       </h1>
 
-      <div className='contact_hamburger'>
+      <div className='contact__hamburger'>
         <Hamburger />
       </div>
 
