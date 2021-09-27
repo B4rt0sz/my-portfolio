@@ -92,8 +92,7 @@ const Hamburger = () => {
     useEffect(() => {
       const handleOutsideClick = (event) => {
         if (ref.current && !ref.current.contains(event.target)) {
-          // alert('You clicked outside of me!')
-          handleClick()
+          setIsOpen(false)
         }
       }
       document.addEventListener('mousedown', handleOutsideClick)
@@ -121,13 +120,7 @@ const Hamburger = () => {
             animate={'animate'}
             exit={'exit'}
           >
-            <motion.ul
-              className='hamburger__menu-list'
-              variants={navVarient}
-              initial={'initial'}
-              animate={'animate'}
-              exit={'exit'}
-            >
+            <motion.ul className='hamburger__menu-list' variants={navVarient}>
               {menu}
             </motion.ul>
           </motion.nav>

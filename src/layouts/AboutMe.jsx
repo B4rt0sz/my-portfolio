@@ -1,18 +1,58 @@
+import { motion } from 'framer-motion'
+
+import Hamburger from '../component/Hamburger'
+
 import PolishCv from '../../public/files/Bartosz_Szucko_CV_PL.pdf'
 import EnglishCv from '../../public/files/Bartosz_Szucko_CV_EN.pdf'
 import photo from '../../public/images/photos/myPhotoS.jpg'
-import Hamburger from '../component/Hamburger'
 
 const AboutMe = () => {
+  const pageVariants = {
+    initial: {
+      y: 100,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+    enter: {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+    exit: {
+      y: 100,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+  }
+
+  const hamburgerVariants = {
+    exit: {
+      y: -500,
+      x: 500,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+  }
+
   return (
-    <div className='aboutMe'>
+    <motion.div
+      className='aboutMe'
+      variants={pageVariants}
+      initial='initial'
+      animate='enter'
+      exit='exit'
+    >
       <h1 className='aboutMe__mainTitle'>
         about me<span>:</span>
       </h1>
 
-      <div className='aboutMe__hamburger'>
+      <motion.div className='aboutMe__hamburger' variants={hamburgerVariants}>
         <Hamburger />
-      </div>
+      </motion.div>
 
       <div className='aboutMe__info'>
         <picture className='aboutMe__info-photo'>
@@ -48,7 +88,7 @@ const AboutMe = () => {
           <span>English Resume</span>
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

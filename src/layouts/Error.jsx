@@ -1,20 +1,60 @@
 import { useHistory } from 'react-router'
-import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
 import Hamburger from '../component/Hamburger'
+
 import errorS from '../../public/images/photos/errorPageS.gif'
 
 const Error = () => {
   let history = useHistory()
   const handleRedirect = () => history.goBack()
+
+  const pageVariants = {
+    initial: {
+      y: 100,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+    enter: {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+    exit: {
+      y: 100,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+  }
+
+  const hamburgerVariants = {
+    exit: {
+      y: -500,
+      x: 500,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+  }
+
   return (
-    <div className='error'>
+    <motion.div
+      className='error'
+      variants={pageVariants}
+      initial='initial'
+      animate='enter'
+      exit='exit'
+    >
       <h1 className='error__mainTitle'>
         Error_404<span>!</span>
       </h1>
 
-      <div className='error__hamburger'>
+      <motion.div className='error__hamburger' variants={hamburgerVariants}>
         <Hamburger />
-      </div>
+      </motion.div>
 
       <div className='error__gif'>
         <img className='error__gif-img' src={errorS} alt='error_gif' />
@@ -31,7 +71,7 @@ const Error = () => {
           one.
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

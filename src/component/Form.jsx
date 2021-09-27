@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import emailjs from 'emailjs-com'
+import { motion } from 'framer-motion'
 
 const Form = () => {
   const [message, setMessage] = useState(false)
@@ -59,25 +60,37 @@ const Form = () => {
         onSubmit={handleSubmit(sendEmail)}
         ref={form}
       >
-        <input
+        <motion.input
           className='contact__form-input'
           type='text'
           placeholder='Name'
           {...register('user_name')}
+          whileFocus={{
+            scale: 1.03,
+            boxShadow: '0px 0px 4px #B68E78',
+          }}
         />
         <p className='contact__form-error'>{errors.user_name?.message}</p>
-        <input
+        <motion.input
           className='contact__form-input'
           type='text'
           placeholder='E-mail'
           {...register('user_email')}
+          whileFocus={{
+            scale: 1.03,
+            boxShadow: '0px 0px 4px #B68E78',
+          }}
         />
         <p className='contact__form-error'>{errors.user_email?.message}</p>
-        <textarea
+        <motion.textarea
           className='contact__form-textarea'
           placeholder='Enter your message...'
           {...register('user_message')}
-        ></textarea>
+          whileFocus={{
+            scale: 1.03,
+            boxShadow: '0px 0px 4px #B68E78',
+          }}
+        ></motion.textarea>
         <p className='contact__form-error'>{errors.user_message?.message}</p>
         {message ? (
           <p className='contact__form-success'>Your message has been sent!</p>

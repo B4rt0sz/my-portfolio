@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 import Hamburger from '../component/Hamburger'
 
 import htmlImg from '../../public/images/icons/html48.png'
@@ -15,9 +17,9 @@ import webpackImg from '../../public/images/icons/webpack48.png'
 import gitImg from '../../public/images/icons/git48.png'
 
 const skillsList = [
-  { text: 'Html', src: htmlImg },
-  { text: 'Css', src: cssImg },
-  { text: 'Sass', src: sassImg },
+  { text: 'HTML', src: htmlImg },
+  { text: 'CSS', src: cssImg },
+  { text: 'SASS', src: sassImg },
   { text: 'JavaScript', src: jsImg },
   { text: 'React', src: reactImg },
   { text: 'Redux', src: reduxImg },
@@ -31,6 +33,37 @@ const skillsList = [
 ]
 
 const Skills = () => {
+  const pageVariants = {
+    initial: {
+      y: 100,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+    enter: {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+    exit: {
+      y: 100,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+  }
+
+  const hamburgerVariants = {
+    exit: {
+      y: -500,
+      x: 500,
+      scale: 0.8,
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.5 },
+    },
+  }
+
   const skillList = skillsList.map((icon) => (
     <div className='skills__section-list-item' key={icon.text}>
       <img src={icon.src} alt={icon.text} />
@@ -39,17 +72,23 @@ const Skills = () => {
   ))
 
   return (
-    <div className='skills'>
+    <motion.div
+      className='skills'
+      variants={pageVariants}
+      initial='initial'
+      animate='enter'
+      exit='exit'
+    >
       <h1 className='skills__mainTitle'>
         skills<span>:</span>
       </h1>
-      <div className='skills__hamburger'>
+      <motion.div className='skills__hamburger' variants={hamburgerVariants}>
         <Hamburger />
-      </div>
+      </motion.div>
       <section className='skills__section'>
         <div className='skills__section-list'>{skillList}</div>
       </section>
-    </div>
+    </motion.div>
   )
 }
 

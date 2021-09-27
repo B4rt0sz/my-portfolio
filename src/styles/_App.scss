@@ -2,4 +2,9 @@ body {
   background-color: $backgroundColor;
   font-family: $default-font;
   color: $normalText;
+
+  &::-webkit-scrollbar {
+    display: none;
+    // -webkit-appearance: none;
+  }
 }
