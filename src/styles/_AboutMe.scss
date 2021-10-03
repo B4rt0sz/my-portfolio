@@ -73,9 +73,10 @@
       'resumepl resumeen';
     grid-template-rows: 30% 70%;
     justify-content: space-around;
-
+    justify-items: center;
     padding: 10px 0;
     width: 280px;
+
     &-title {
       grid-area: title;
       align-self: center;
@@ -98,8 +99,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-      margin-top: 10px;
       width: 100px;
       height: 45px;
       letter-spacing: 1px;
@@ -109,55 +108,11 @@
       font-size: 13px;
       border-radius: 10px;
       color: $normalText;
-      background-color: #df9f7c;
-      transition: 0.3s;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    &-pl::before,
-    &-pl::after,
-    &-en::before,
-    &-en::after {
-      content: '';
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      top: 0;
-      left: 0;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    &-pl::before,
-    &-en::before {
-      z-index: -1;
+      font-family: $default-font;
+      border: 1px solid $titleTextTwo;
       background-color: #df9f7c;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    &-pl::after,
-    &-en::after {
-      z-index: -2;
-      background-color: #935b42;
-      transform: translate(0.5rem, 0.5rem);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    &-pl:hover,
-    &-en:hover {
-      transform: translate(0.5rem, 0.5rem);
-      color: #df9f7c;
-    }
-
-    &-pl:hover::before,
-    &-en:hover::before {
-      background-color: #935b42;
-    }
-
-    &-pl:hover::after,
-    &-en:hover::after {
-      background-color: #df9f7c;
-      transform: translate(-0.5rem, -0.5rem);
+      cursor: pointer;
     }
   }
 }

@@ -73,20 +73,24 @@ const AboutMe = () => {
 
       <div className='aboutMe__cv'>
         <h2 className='aboutMe__cv-title'>To see my CV click here</h2>
-        <a
+        <motion.a
           className='aboutMe__cv-pl'
           download='Bartosz_Szucko_CV_PL'
           href={PolishCv}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 1.0 }}
         >
           <span>Polish Resume</span>
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           className='aboutMe__cv-en'
           download='Bartosz_Szucko_CV_EN'
           href={EnglishCv}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 1.0 }}
         >
           <span>English Resume</span>
-        </a>
+        </motion.a>
       </div>
     </motion.div>
   )

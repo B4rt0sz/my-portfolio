@@ -95,9 +95,14 @@ const Form = () => {
         {message ? (
           <p className='contact__form-success'>Your message has been sent!</p>
         ) : null}
-        <button type='submit' className='contact__form-submit'>
+        <motion.button
+          type='submit'
+          className='contact__form-submit'
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 1.0 }}
+        >
           Send Message
-        </button>
+        </motion.button>
       </form>
     </div>
   )
