@@ -7,6 +7,7 @@ import Background from './layouts/Background'
 import MainPage from './layouts/MainPage'
 import AboutMe from './layouts/AboutMe'
 import Skills from './layouts/Skills'
+import Projects from './layouts/Projects'
 import Contact from './layouts/Contact'
 import Error from './layouts/Error'
 
@@ -27,6 +28,7 @@ function App() {
               <Route path='/about_me' component={AboutMe} />
               <Route path='/skills' component={Skills} />
               <Route path='/contact' component={Contact} />
+              <Route path='/projects' component={Projects} />
               <Route component={Error} />
             </Switch>
           </AnimatePresence>

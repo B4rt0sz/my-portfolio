@@ -1,0 +1,116 @@
+.projects__slider {
+  display: grid;
+  grid-template-rows: 90% 10%;
+  justify-content: center;
+
+  &-container {
+    display: grid;
+    grid-template-rows: 13% 35% 37% 15%;
+    grid-template-areas:
+      'title title'
+      'img img'
+      'txt txt'
+      'code site';
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 270px;
+    border-radius: 25px;
+    background: $texbackground;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    a {
+      text-decoration: none;
+    }
+  }
+  &-title {
+    grid-area: title;
+    font-size: 35px;
+    color: $titleTextOne;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &-img {
+    grid-area: img;
+    border-radius: 25px;
+    max-width: 90%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &-txt {
+    grid-area: txt;
+    padding: 0 10px;
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  &-btnLeft,
+  &-btnRight {
+    top: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+
+    img {
+      pointer-events: none;
+    }
+  }
+  .prev {
+    position: absolute;
+    left: 0;
+  }
+
+  .next {
+    position: absolute;
+    right: 0;
+  }
+
+  &-btnCode {
+    grid-area: code;
+  }
+
+  &-btnSite {
+    grid-area: site;
+  }
+
+  &-btnCode,
+  &-btnSite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 45px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 10px;
+    color: $normalText;
+    font-family: $default-font;
+    border: 1px solid $titleTextTwo;
+    background-color: #df9f7c;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+
+  &-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-dot {
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #df9f7c;
+    border: 1px solid $titleTextTwo;
+    margin: 0 5px;
+    cursor: pointer;
+
+    &.active {
+      border: 2px solid $titleTextTwo;
+    }
+  }
+}
