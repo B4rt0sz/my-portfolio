@@ -1,27 +1,35 @@
 .aboutMe {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 15% 60% 25%;
-  justify-content: center;
 
   &__mainTitle {
-    align-self: center;
+    @include mainTitle();
     text-align: justify;
-    font-weight: 600;
-    font-size: 40px;
-    width: 195px;
-    color: $titleTextOne;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      -3px -3px 0 rgba(255, 255, 255, 0.5);
-    span {
-      color: $titleTextTwo;
+    @include mobileM {
+      font-size: 45px;
+    }
+    @include mobileL {
+      font-size: 50px;
+    }
+    @include tabletS {
+      margin-bottom: 30px;
+    }
+    @include tabletM {
+      font-size: 60px;
+    }
+    @include tabletMl {
+      font-size: 50px;
+    }
+    @include tabletL {
+      font-size: 70px;
+    }
+    @include tabletLl {
+      font-size: 70px;
     }
   }
 
   &__hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include hamburger;
   }
 
   &__info {
@@ -29,62 +37,134 @@
     text-align: justify;
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 55% 45%;
     grid-template-areas:
       'photo text1'
       'text2 text2';
-    padding: 15px 5px;
-    width: 275px;
-    height: 300px;
+    margin: 0 10px;
+    padding: 10px 0px;
     border-radius: 25px;
     background: $texbackground;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    @include mobileM {
+      margin: 0 5%;
+    }
+    @include tabletS {
+      margin: 0 15%;
+      grid-template-columns: 30% 70%;
+    }
+    @include tabletM {
+      margin: 0 15%;
+    }
+    @include desktopS {
+      margin: 0 20%;
+    }
 
     &-photo {
       grid-area: photo;
-      margin: 0 auto;
+      margin: auto auto;
       img {
         border-radius: 25px;
       }
     }
 
     p {
-      line-height: 1.2;
+      line-height: 1.1;
       font-size: 15px;
+      justify-self: center;
+      @include mobileM {
+        font-size: 18px;
+      }
+      @include mobileL {
+        font-size: 19px;
+        @media (min-height: 850px) {
+          font-size: 21px;
+        }
+      }
+      @include tabletS {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+      @include tabletM {
+        font-size: 28px;
+      }
+      @include tabletMl {
+        font-size: 20px;
+      }
+      @include tabletL {
+        font-size: 36px;
+      }
+      @include tabletLl {
+        font-size: 26px;
+      }
+      @include desktopS {
+        font-size: 30px;
+      }
+      @include desktopM {
+        font-size: 32px;
+      }
     }
 
     &-text1 {
       grid-area: text1;
-      justify-self: center;
-      width: 156px;
+      align-self: center;
+      max-width: 90%;
     }
     &-text2 {
       grid-area: text2;
-      justify-self: center;
-      width: 250px;
+      max-width: 94%;
     }
   }
 
   &__cv {
+    justify-self: center;
     display: grid;
     grid-template-areas:
       'title title'
       'resumepl resumeen';
-    grid-template-rows: 30% 70%;
     justify-content: space-around;
     justify-items: center;
-    padding: 10px 0;
-    width: 280px;
+    margin: 10px 0;
+    min-width: 280px;
 
     &-title {
       grid-area: title;
-      align-self: center;
-      text-align: center;
+      @include smallTitle;
       font-size: 20px;
-
-      color: $titleTextOne;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding-bottom: 5px;
+      @include mobileM {
+        font-size: 24px;
+        padding-bottom: 10px;
+      }
+      @include mobileL {
+        font-size: 26px;
+        @media (min-height: 750px) {
+          font-size: 28px;
+        }
+      }
+      @include tabletS {
+        font-size: 26px;
+        padding: 20px 0;
+      }
+      @include tabletM {
+        font-size: 36px;
+      }
+      @include tabletMl {
+        @media (min-height: 600px) {
+          font-size: 30px;
+        }
+      }
+      @include tabletL {
+        font-size: 40px;
+      }
+      @include tabletLl {
+        font-size: 36px;
+      }
+      @include desktopS {
+        font-size: 40px;
+      }
+      @include desktopM {
+        font-size: 44px;
+      }
     }
 
     &-pl {
@@ -96,23 +176,42 @@
 
     &-pl,
     &-en {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 45px;
-      letter-spacing: 1px;
-      text-align: center;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 13px;
-      border-radius: 10px;
-      color: $normalText;
-      font-family: $default-font;
-      border: 1px solid $titleTextTwo;
-      background-color: #df9f7c;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      cursor: pointer;
+      @include btn;
+      @include mobileL {
+        width: 110px;
+        height: 50px;
+        @media (min-height: 750px) {
+          width: 115px;
+          height: 55px;
+        }
+      }
+      @include tabletS {
+        width: 110px;
+        height: 50px;
+      }
+      @include tabletM {
+        font-size: 15px;
+        width: 130px;
+        height: 65px;
+      }
+      @include tabletMl {
+        @media (min-height: 700px) {
+          font-size: 15px;
+          width: 130px;
+          height: 65px;
+          margin: 0 20px;
+        }
+      }
+      @include tabletL {
+        font-size: 16px;
+        width: 140px;
+        height: 70px;
+      }
+      @include desktopS {
+        font-size: 16px;
+        width: 140px;
+        height: 70px;
+      }
     }
   }
 }
