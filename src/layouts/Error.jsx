@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 import Hamburger from '../component/Hamburger'
 
-import errorS from '../../public/images/photos/errorPageS.gif'
+import errorGif from '../../public/images/photos/errorPage.gif'
 
 const Error = () => {
   let history = useHistory()
@@ -32,8 +32,8 @@ const Error = () => {
 
   const hamburgerVariants = {
     exit: {
-      y: -500,
-      x: 500,
+      y: -1000,
+      x: 1000,
       scale: 0.8,
       opacity: 0,
       transition: { type: 'tween', duration: 0.5 },
@@ -57,7 +57,7 @@ const Error = () => {
       </motion.div>
 
       <div className='error__gif'>
-        <img className='error__gif-img' src={errorS} alt='error_gif' />
+        <img className='error__gif-img' src={errorGif} alt='error_gif' />
       </div>
 
       <div className='error__info'>

@@ -1,42 +1,72 @@
 .error {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 20% 35% 45%;
+  justify-items: center;
 
   &__mainTitle {
-    align-self: center;
+    @include mainTitle();
     text-align: center;
+    margin: 0;
     margin-top: 50px;
-    font-weight: 600;
-    font-size: 40px;
-    width: 100%;
-    color: $titleTextOne;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      -3px -3px 0 rgba(255, 255, 255, 0.5);
-    span {
-      color: $titleTextTwo;
+    @include mobileM {
+      font-size: 45px;
+    }
+    @include mobileL {
+      font-size: 50px;
+    }
+    @include tabletS {
+      margin-top: 10px;
+    }
+    @include tabletM {
+      font-size: 60px;
+    }
+    @include tabletMl {
+      font-size: 50px;
+    }
+    @include tabletL {
+      font-size: 70px;
+    }
+    @include tabletLl {
+      font-size: 70px;
     }
   }
 
   &__hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include hamburger;
   }
 
   &__gif {
+    align-self: center;
     &-img {
-      width: 320px;
-      height: 240px;
-      border-radius: 60px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      @include tabletS {
+        width: 40%;
+      }
+      @include tabletLl {
+        width: 60%;
+      }
+      @include desktopS {
+        width: 70%;
+      }
     }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    @include tabletM {
+      @media (min-height: 950px) {
+        justify-content: space-around;
+      }
+    }
+    @include tabletLl {
+      justify-content: space-around;
+    }
 
     &-text1,
     &-text2 {
@@ -45,12 +75,58 @@
     }
 
     &-text1 {
-      font-size: 25px;
-      width: 242px;
+      font-size: 21px;
+      width: 76%;
+      text-align: center;
+      @include mobileX {
+        font-size: 23px;
+      }
+      @include tabletS {
+        font-size: 23px;
+        margin-bottom: 20px;
+      }
+      @include tabletM {
+        font-size: 30px;
+      }
+      @include tabletMl {
+        font-size: 28px;
+        margin-bottom: 0;
+      }
+      @include tabletL {
+        font-size: 40px;
+      }
+      @include tabletLl {
+        font-size: 40px;
+      }
+      @include desktopS {
+        font-size: 48px;
+        margin-bottom: 30px;
+      }
     }
     &-text2 {
+      text-align: center;
       font-size: 15px;
-      width: 280px;
+      width: 88%;
+      margin-bottom: 20px;
+      @include mobileM {
+        width: 80%;
+      }
+      @include mobileX {
+        font-size: 17px;
+      }
+      @include tabletM {
+        width: 60%;
+        font-size: 24px;
+      }
+      @include tabletL {
+        font-size: 30px;
+      }
+      @include tabletLl {
+        font-size: 24px;
+      }
+      @include desktopS {
+        font-size: 28px;
+      }
 
       span {
         cursor: pointer;
