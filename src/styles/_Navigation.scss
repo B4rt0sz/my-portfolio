@@ -1,7 +1,29 @@
 .navList {
   &-item {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px 0;
+    @include mobileL {
+      margin: 18px 0;
+    }
+    @include tabletS {
+      margin: 15px 0;
+    }
+    @include tabletM {
+      margin: 25px 0;
+    }
+    @include tabletMl {
+      margin: 20px 0;
+    }
+    @include tabletL {
+      margin: 30px 0;
+    }
+    @include tabletLl {
+      margin: 30px 0;
+    }
+    @include desktopS {
+      margin: 20px 0;
+    }
+
     & a {
       position: relative;
       text-decoration: none;
@@ -9,6 +31,25 @@
       font-size: 30px;
       color: $titleTextOne;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      @include mobileM {
+        font-size: 34px;
+      }
+      @include mobileL {
+        font-size: 38px;
+      }
+      @include mobileX {
+        font-size: 42px;
+      }
+      @include tabletS {
+        font-size: 34px;
+      }
+      @include tabletL {
+        font-size: 50px;
+      }
+      @include tabletLl {
+        font-size: 50px;
+      }
+
       &:after {
         background: none repeat scroll 0 0 transparent;
         bottom: 0;
@@ -21,6 +62,7 @@
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
       }
+
       &:hover:after {
         width: 100%;
         left: 0;

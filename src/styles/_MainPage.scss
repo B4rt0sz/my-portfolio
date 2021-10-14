@@ -1,51 +1,141 @@
 .mainPage {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 15% 25% 10% 43% 7%;
-  justify-content: center;
 
   &__mainTitle {
-    align-self: center;
+    @include mainTitle();
     text-align: justify;
-    font-weight: 600;
-    font-size: 40px;
-    width: 120px;
-    color: $titleTextOne;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      -3px -3px 0 rgba(255, 255, 255, 0.5);
-    span {
-      color: $titleTextTwo;
+    @include mobileM {
+      font-size: 45px;
+    }
+    @include mobileL {
+      font-size: 50px;
+    }
+    @include tabletS {
+      margin-bottom: 30px;
+    }
+    @include tabletM {
+      font-size: 60px;
+    }
+    @include tabletMl {
+      font-size: 50px;
+    }
+    @include tabletL {
+      font-size: 70px;
+    }
+    @include tabletLl {
+      font-size: 70px;
     }
   }
 
   &__text {
+    padding: 10px 0;
     justify-self: center;
-    text-align: justify;
-    margin-top: 15px;
+    text-align: center;
+    align-self: center;
     font-size: 25px;
-    width: 243px;
+    max-width: 76%;
+    min-height: 120px;
     color: $titleTextOne;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include mobileM {
+      font-size: 28px;
+      min-height: 140px;
+    }
+    @include mobileL {
+      font-size: 29px;
+    }
+    @include mobileX {
+      font-size: 31px;
+      min-height: 145px;
+    }
+    @include tabletS {
+      font-size: 23px;
+    }
+    @include tabletM {
+      font-size: 38px;
+      max-width: 70%;
+    }
+    @include tabletMl {
+      font-size: 30px;
+    }
+    @include tabletL {
+      font-size: 46px;
+      max-width: 70%;
+      padding: 30px 0;
+      min-height: 200px;
+    }
+    @include tabletLl {
+      font-size: 42px;
+    }
   }
+
   &__secondTitle {
     justify-self: center;
-    font-weight: 700;
     text-align: center;
-    margin-top: 10px;
+    align-self: center;
+    margin: 0 10px;
+    font-weight: 700;
     font-size: 30px;
-    width: 285px;
+    min-width: 285px;
     color: $titleTextOne;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include mobileM {
+      font-size: 34px;
+      padding: 10px 0;
+    }
+    @include mobileL {
+      font-size: 36px;
+    }
+    @include mobileX {
+      font-size: 39px;
+    }
+    @include tabletS {
+      font-size: 36px;
+      padding: 10px 0;
+    }
+    @include tabletM {
+      font-size: 44px;
+    }
+    @include tabletMl {
+      font-size: 40px;
+    }
+    @include tabletL {
+      font-size: 54px;
+    }
+    @include tabletLl {
+      font-size: 54px;
+    }
   }
+
   &__nav {
     justify-self: center;
     align-self: center;
-    width: 150px;
+    min-width: 150px;
   }
+
   &__footer {
     align-self: center;
     text-align: justify;
+    margin-left: 10%;
     font-size: 11px;
-    width: 175px;
+    @include mobileM {
+      font-size: 13px;
+    }
+    @include mobileL {
+      font-size: 15px;
+    }
+    @include mobileX {
+      font-size: 17px;
+    }
+    @include tabletS {
+      font-size: 17px;
+    }
+    @include tabletM {
+      font-size: 20px;
+    }
+    @include tabletMl {
+      font-size: 20px;
+    }
   }
 }

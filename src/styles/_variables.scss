@@ -8,3 +8,123 @@ $titleTextTwo: #935b42;
 $normalText: #333;
 
 $texbackground: rgba(147, 92, 66, 0.6);
+
+@mixin mainTitle {
+  margin-top: 10px;
+  margin-left: 10%;
+  align-self: center;
+  font-weight: 600;
+  font-size: 40px;
+  color: $titleTextOne;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    -3px -3px 0 rgba(255, 255, 255, 0.5);
+  span {
+    color: $titleTextTwo;
+  }
+}
+
+@mixin smallTitle {
+  align-self: center;
+  text-align: center;
+  color: $titleTextOne;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@mixin hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+@mixin btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 45px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 10px;
+  color: $normalText;
+  font-family: $default-font;
+  border: 1px solid $titleTextTwo;
+  background-color: #df9f7c;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+$breakpoints: (
+  mobileS: 0,
+  mobileM: 360px,
+  mobileL: 375px,
+  mobileX: 390px,
+  tabletS: 560px,
+  tabletM: 720px,
+  tabletL: 1020px,
+  desktopS: 1130px,
+  desktopM: 1350px,
+  desktopL: 1600px,
+);
+
+@mixin mobileM {
+  @media (min-width: map-get($breakpoints, 'mobileM' )) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobileL {
+  @media (min-width: map-get($breakpoints, 'mobileL' )) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobileX {
+  @media (min-width: map-get($breakpoints, 'mobileX' )) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin tabletS {
+  @media (min-width: map-get($breakpoints, 'tabletS' )) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin tabletM {
+  @media (min-width: map-get($breakpoints, 'tabletM' )) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin tabletMl {
+  @media (min-width: map-get($breakpoints, 'tabletM' )) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin tabletL {
+  @media (min-width: map-get($breakpoints, 'tabletL' )) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin tabletLl {
+  @media (min-width: map-get($breakpoints, 'tabletL' )) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin desktopS {
+  @media (min-width: map-get($breakpoints, 'desktopS' )) {
+    @content;
+  }
+}
+@mixin desktopM {
+  @media (min-width: map-get($breakpoints, 'desktopM' )) {
+    @content;
+  }
+}
+@mixin desktopL {
+  @media (min-width: map-get($breakpoints, 'desktopL' )) {
+    @content;
+  }
+}
