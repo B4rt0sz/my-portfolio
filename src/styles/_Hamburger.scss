@@ -1,9 +1,8 @@
 .hamburger {
   &__button {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 5px;
-    transform: translate(-5%, -20%);
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -11,7 +10,22 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
-
+    @include mobileL {
+      top: 30px;
+      right: 20px;
+    }
+    @include tabletS {
+      top: 30px;
+      right: 20px;
+    }
+    @include tabletL {
+      width: 40px;
+      height: 40px;
+    }
+    @include tabletLl {
+      width: 40px;
+      height: 40px;
+    }
     &-menu {
       width: 28px;
       height: 3px;
@@ -19,6 +33,18 @@
       border-radius: 5px;
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
       transition: all 0.5s ease-in-out;
+
+      @include tabletM {
+        width: 32px;
+      }
+      @include tabletL {
+        width: 36px;
+        height: 4px;
+      }
+      @include tabletLl {
+        width: 36px;
+        height: 4px;
+      }
 
       &::before,
       &::after {
@@ -30,6 +56,18 @@
         border-radius: 5px;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
         transition: all 0.5s ease-in-out;
+
+        @include tabletM {
+          width: 32px;
+        }
+        @include tabletL {
+          width: 36px;
+          height: 4px;
+        }
+        @include tabletLl {
+          width: 36px;
+          height: 4px;
+        }
       }
 
       &::before {
@@ -62,7 +100,7 @@
     right: 0;
     z-index: 1;
     width: 305px;
-    height: 320px;
+    height: 336px;
     border-radius: 0 0 0 305px;
     background-color: #935b42;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -70,7 +108,7 @@
     &-list {
       position: absolute;
       top: 30px;
-      right: 80px;
+      right: 60px;
     }
 
     &-item {
