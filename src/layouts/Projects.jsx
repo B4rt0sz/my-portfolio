@@ -27,8 +27,8 @@ const Projects = () => {
 
   const hamburgerVariants = {
     exit: {
-      y: -500,
-      x: 500,
+      y: -1000,
+      x: 1000,
       scale: 0.8,
       opacity: 0,
       transition: { type: 'tween', duration: 0.5 },

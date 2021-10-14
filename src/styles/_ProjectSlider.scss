@@ -1,11 +1,9 @@
 .projects__slider {
   display: grid;
-  grid-template-rows: 90% 10%;
-  justify-content: center;
+  justify-items: center;
 
   &-container {
     display: grid;
-    grid-template-rows: 13% 35% 37% 15%;
     grid-template-areas:
       'title title'
       'img img'
@@ -14,10 +12,49 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
-    width: 270px;
+    gap: 10px;
+    margin: 0 24px;
+    padding: 10px;
+    min-width: 270px;
+    min-height: 360px;
     border-radius: 25px;
     background: $texbackground;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+
+    @include mobileM {
+      margin: 0 38px;
+      min-height: 400px;
+    }
+    @include mobileL {
+      min-width: 80%;
+      min-height: 450px;
+    }
+    @include mobileX {
+      min-height: 510px;
+    }
+    @include tabletS {
+      min-width: 60%;
+      max-width: 60%;
+      min-height: 360px;
+    }
+    @include tabletM {
+      max-width: 60%;
+      min-height: 690px;
+    }
+    @include tabletL {
+      min-height: 720px;
+    }
+    @include tabletLl {
+      min-height: 520px;
+    }
+    @include desktopS {
+      min-width: 80%;
+      min-height: 630px;
+    }
+    @include desktopM {
+      min-height: 710px;
+    }
 
     a {
       text-decoration: none;
@@ -25,26 +62,93 @@
   }
   &-title {
     grid-area: title;
-    font-size: 35px;
+    margin: 5px 0;
+    font-size: 32px;
     color: $titleTextOne;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include mobileM {
+      font-size: 36px;
+    }
+    @include mobileX {
+      font-size: 40px;
+    }
+    @include tabletS {
+      margin-top: 20px;
+      font-size: 34px;
+    }
+    @include tabletM {
+      font-size: 52px;
+    }
+    @include tabletMl {
+      font-size: 36px;
+    }
+    @include tabletL {
+      font-size: 60px;
+    }
+    @include tabletLl {
+      font-size: 42px;
+    }
   }
+
   &-img {
     grid-area: img;
-    border-radius: 25px;
-    max-width: 90%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    max-width: 80%;
+    img {
+      width: 100%;
+      border-radius: 25px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
   }
+
   &-txt {
     grid-area: txt;
-    padding: 0 10px;
-    font-size: 16px;
+    margin: 0 10px;
+    font-size: 12px;
     text-align: justify;
+    margin: 0 20px;
+    @include mobileM {
+      font-size: 14px;
+      @media (min-height: 750px) {
+        font-size: 17px;
+      }
+    }
+    @include mobileL {
+      font-size: 16px;
+    }
+    @include mobileX {
+      font-size: 17px;
+      @media (min-height: 800px) {
+        font-size: 19px;
+      }
+    }
+
+    @include tabletM {
+      margin: 0 40px;
+      font-size: 24px;
+      @media (min-height: 1000px) {
+        margin: 0 50px;
+        font-size: 25px;
+      }
+    }
+    @include tabletMl {
+      font-size: 16px;
+    }
+    @include tabletL {
+      font-size: 28px;
+    }
+    @include tabletLl {
+      font-size: 20px;
+    }
+    @include desktopS {
+      font-size: 22px;
+    }
+    @include desktopM {
+      font-size: 24px;
+    }
   }
 
   &-btnLeft,
   &-btnRight {
-    top: 50%;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -53,15 +157,6 @@
     img {
       pointer-events: none;
     }
-  }
-  .prev {
-    position: absolute;
-    left: 0;
-  }
-
-  .next {
-    position: absolute;
-    right: 0;
   }
 
   &-btnCode {
@@ -74,35 +169,45 @@
 
   &-btnCode,
   &-btnSite {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 45px;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 13px;
-    border-radius: 10px;
-    color: $normalText;
-    font-family: $default-font;
-    border: 1px solid $titleTextTwo;
-    background-color: #df9f7c;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    @include btn;
+    width: 90px;
+    height: 40px;
+    @include mobileM {
+      width: 100px;
+      height: 45px;
+    }
+    @include tabletM {
+      font-size: 15px;
+      width: 130px;
+      height: 60px;
+    }
+    @include tabletM {
+      width: 140px;
+      height: 65px;
+    }
+    @include desktopS {
+      width: 130px;
+      height: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 
   &-dots {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
   }
 
   &-dot {
     box-sizing: border-box;
     width: 18px;
     height: 18px;
+    @include tabletM {
+      width: 24px;
+      height: 24px;
+    }
     border-radius: 50%;
     background-color: #df9f7c;
     border: 1px solid $titleTextTwo;

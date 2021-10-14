@@ -1,28 +1,35 @@
 .projects {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 15% 85%;
-  justify-content: center;
   overflow: hidden;
 
   &__mainTitle {
-    align-self: center;
+    @include mainTitle();
     text-align: justify;
-    font-weight: 600;
-    font-size: 40px;
-    width: 275px;
-    color: $titleTextOne;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      -3px -3px 0 rgba(255, 255, 255, 0.5);
-    span {
-      color: $titleTextTwo;
+    margin-top: 0;
+    margin-bottom: 20px;
+    @include mobileM {
+      font-size: 50px;
+    }
+
+    @include tabletS {
+      margin-bottom: 30px;
+    }
+    @include tabletM {
+      font-size: 60px;
+    }
+    @include tabletMl {
+      font-size: 50px;
+    }
+    @include tabletL {
+      font-size: 70px;
+    }
+    @include tabletLl {
+      font-size: 70px;
     }
   }
 
   &__hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
+    @include hamburger;
   }
 }

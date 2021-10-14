@@ -3,29 +3,41 @@ import { Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 
-import webpackImg from '../../public/images/projects/webpack.png'
-import portfolioImg from '../../public/images/projects/portfolio.png'
-import leftArrow from '../../public/images/icons/left_arrow.png'
-import rightArrow from '../../public/images/icons/right_arrow.png'
+import webpackImgS from '../../public/images/projects/webpackS.png'
+import webpackImgSm from '../../public/images/projects/webpackSm.png'
+import webpackImgM from '../../public/images/projects/webpackM.png'
+import webpackImgL from '../../public/images/projects/webpackL.png'
+import portfolioImgS from '../../public/images/projects/portfolioS.png'
+import portfolioImgSm from '../../public/images/projects/portfolioSm.png'
+import portfolioImgM from '../../public/images/projects/portfolioM.png'
+import portfolioImgL from '../../public/images/projects/portfolioL.png'
 
 const projects = [
   {
     title: 'Webpack',
-    img: webpackImg,
+    imgS: webpackImgS,
+    imgSm: webpackImgSm,
+    imgM: webpackImgM,
+    imgL: webpackImgL,
     txt: 'The project was created in order to create a simple, universal template that will be used as a base for future projects. The project was implemented based on Webpack 5 with React 17 using Babel, HMR, Sass, and PostCSS with a hot dev server and an optimized production build.',
     code: 'https://github.com/B4rt0sz/react-webpack-5-boilerplate',
     site: null,
   },
   {
     title: 'Portfolio',
-    img: portfolioImg,
+    imgS: portfolioImgS,
+    imgSm: portfolioImgSm,
+    imgM: portfolioImgM,
+    imgL: portfolioImgL,
     txt: 'The project of my portfolio website. It shows the development of my acquired programming skills, it also presents my other projects. To create it, I used my Webpack template and React, SASS and other APIs which are responsible for animations, form validations, and more (for more see the code).',
     code: 'https://github.com/B4rt0sz/my-portfolio',
     site: null,
   },
   {
     title: 'WeatherApp',
-    img: null,
+    imgS: null,
+    imgM: null,
+    imgL: null,
     txt: 'Project during coding...',
     code: null,
     site: null,
@@ -126,11 +138,25 @@ const ProjectSlider = () => {
       >
         <h2 className='projects__slider-title'>{project.title}</h2>
         {project.code && (
-          <img
-            className='projects__slider-img'
-            src={project.img}
-            alt={project.title}
-          />
+          <picture className='projects__slider-img'>
+            <source
+              media='(orientation: landscape) and (min-width:1200px)'
+              srcSet={project.imgL}
+            />
+            <source
+              media='(orientation: portrait) and (min-width:760px)'
+              srcSet={project.imgM}
+            />
+            <source
+              media='(orientation: landscape) and (min-width:1020px)'
+              srcSet={project.imgM}
+            />
+            <source
+              media='(orientation: landscape) and (min-width:640px)'
+              srcSet={project.imgSm}
+            />
+            <img src={project.imgS} alt={project.title} />
+          </picture>
         )}
         <p className='projects__slider-txt'>{project.txt}</p>
         {project.code && (
@@ -172,21 +198,6 @@ const ProjectSlider = () => {
 
   return (
     <div className='projects__slider'>
-      <motion.button
-        className='projects__slider-btnLeft prev'
-        onClick={() => paginate(-1)}
-        whileTap={{ scale: 0.9, duration: 0.5 }}
-      >
-        <img src={leftArrow} alt='leftArrow' />
-      </motion.button>
-      <motion.button
-        className='projects__slider-btnRight next'
-        onClick={() => paginate(1)}
-        whileTap={{ scale: 0.9, duration: 0.5 }}
-      >
-        <img src={rightArrow} alt='rightArrow' />
-      </motion.button>
-
       <AnimatePresence initial={false} exitBeforeEnter custom={direction}>
         {projectContainer}
       </AnimatePresence>
