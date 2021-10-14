@@ -66,7 +66,7 @@ const Form = () => {
           placeholder='Name'
           {...register('user_name')}
           whileFocus={{
-            scale: 1.03,
+            scale: 1.01,
             boxShadow: '0px 0px 4px #B68E78',
           }}
         />
@@ -77,7 +77,7 @@ const Form = () => {
           placeholder='E-mail'
           {...register('user_email')}
           whileFocus={{
-            scale: 1.03,
+            scale: 1.01,
             boxShadow: '0px 0px 4px #B68E78',
           }}
         />
@@ -87,7 +87,7 @@ const Form = () => {
           placeholder='Enter your message...'
           {...register('user_message')}
           whileFocus={{
-            scale: 1.03,
+            scale: 1.01,
             boxShadow: '0px 0px 4px #B68E78',
           }}
         ></motion.textarea>

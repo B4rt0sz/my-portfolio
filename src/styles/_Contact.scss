@@ -1,42 +1,83 @@
 .contact {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 15% 18% 16% 51%;
   justify-content: center;
 
   &__mainTitle {
-    align-self: center;
+    @include mainTitle();
     text-align: justify;
-    font-weight: 600;
-    font-size: 40px;
-
-    color: $titleTextOne;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      -3px -3px 0 rgba(255, 255, 255, 0.5);
-    span {
-      color: $titleTextTwo;
+    @include mobileM {
+      font-size: 45px;
+    }
+    @include mobileL {
+      font-size: 50px;
+    }
+    @include tabletS {
+      margin-bottom: 30px;
+    }
+    @include tabletM {
+      font-size: 60px;
+    }
+    @include tabletMl {
+      font-size: 50px;
+    }
+    @include tabletL {
+      font-size: 70px;
+    }
+    @include tabletLl {
+      font-size: 70px;
     }
   }
 
   &__hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include hamburger;
   }
 
   &__info {
     justify-self: center;
+    align-self: center;
     text-align: justify;
     padding: 10px 10px;
-    width: 270px;
-    height: 75px;
+    max-width: 85%;
     border-radius: 25px;
     background: $texbackground;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
+    @include mobileM {
+      margin: 0 12%;
+    }
+    @include tabletS {
+      margin: 0 20%;
+    }
+    @include tabletM {
+      margin: 0 15%;
+    }
+    @include desktopS {
+      margin: 0 29%;
+    }
+
     &-text {
       line-height: 1.2;
       font-size: 15px;
+      text-align: center;
+      @include mobileL {
+        font-size: 16px;
+      }
+      @include mobileX {
+        font-size: 17px;
+      }
+      @include tabletM {
+        font-size: 27px;
+      }
+      @include tabletL {
+        font-size: 36px;
+      }
+      @include desktopS {
+        font-size: 24px;
+      }
+      @include desktopM {
+        font-size: 25px;
+      }
     }
   }
 
@@ -45,28 +86,93 @@
     grid-template-areas:
       'title title'
       'linkedin git';
-    grid-template-rows: 30% 70%;
     justify-items: center;
+    align-items: center;
+    @include mobileM {
+      margin: 0 5%;
+    }
+    @include tabletS {
+      margin: 0 15%;
+    }
+    @include tabletM {
+      margin: 0 15%;
+    }
+    @include desktopS {
+      margin: 0 18%;
+    }
 
     &-title {
       grid-area: title;
-      text-align: center;
       font-size: 25px;
-      color: $titleTextOne;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      @include smallTitle;
+      @include mobileM {
+        font-size: 28px;
+      }
+      @include mobileL {
+        font-size: 30px;
+      }
+      @include mobileX {
+        margin-bottom: 10px;
+        font-size: 34px;
+      }
+      @include tabletS {
+        font-size: 26px;
+        margin: 10px 0;
+      }
+      @include tabletM {
+        font-size: 44px;
+      }
+      @include tabletMl {
+        font-size: 29px;
+        margin: 20px 0;
+      }
+      @include tabletL {
+        font-size: 48px;
+      }
+      @include tabletLl {
+        font-size: 40px;
+      }
+      @include desktopS {
+        font-size: 44px;
+      }
+      @include desktopM {
+        font-size: 46px;
+      }
     }
 
     &-in {
       grid-area: linkedin;
+      @include tabletM {
+        margin-left: 20px;
+      }
+      @include tabletL {
+        margin-left: 40px;
+      }
+      @include tabletLl {
+        margin-left: 40px;
+      }
+      @include desktopS {
+        margin-left: 60px;
+      }
     }
 
     &-git {
       grid-area: git;
+      @include tabletM {
+        margin-right: 20px;
+      }
+      @include tabletL {
+        margin-right: 40px;
+      }
+      @include tabletLl {
+        margin-right: 40px;
+      }
+      @include desktopS {
+        margin-right: 60px;
+      }
     }
 
     img {
-      align-self: center;
-      margin-top: 5px;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
   }

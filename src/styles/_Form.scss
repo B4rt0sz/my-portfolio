@@ -1,13 +1,55 @@
 .contact__container {
   display: grid;
-  grid-template-rows: 10% 85%;
+  margin: 0 5%;
+  @include mobileM {
+    margin: 0 8%;
+  }
+  @include tabletS {
+    margin: 0 20%;
+  }
+  @include tabletM {
+    margin: 0 15%;
+  }
+  @include desktopS {
+    margin: 0 28%;
+  }
 
   &-title {
-    align-self: center;
-    text-align: center;
     font-size: 25px;
-    color: $titleTextOne;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include smallTitle;
+    @include mobileM {
+      font-size: 28px;
+    }
+    @include mobileL {
+      font-size: 30px;
+    }
+    @include mobileX {
+      margin-bottom: 10px;
+      font-size: 34px;
+    }
+    @include tabletS {
+      font-size: 26px;
+      margin: 10px 0;
+    }
+    @include tabletM {
+      font-size: 44px;
+    }
+    @include tabletMl {
+      font-size: 29px;
+      margin: 20px 0;
+    }
+    @include tabletL {
+      font-size: 48px;
+    }
+    @include tabletLl {
+      font-size: 40px;
+    }
+    @include desktopS {
+      font-size: 44px;
+    }
+    @include desktopM {
+      font-size: 46px;
+    }
   }
 }
 
@@ -18,7 +60,7 @@
 
   &-input,
   &-textarea {
-    width: 240px;
+    width: 80%;
     height: 25px;
     margin-top: 5px;
     padding: 0 5px;
@@ -31,16 +73,50 @@
     &::placeholder {
       font-size: 12px;
       color: #555;
+
+      @include tabletM {
+        font-size: 13px;
+      }
+      @include tabletMl {
+        font-size: 13px;
+      }
+      @include tabletL {
+        font-size: 14px;
+      }
+      @include tabletLl {
+        font-size: 14px;
+      }
     }
 
     &:focus {
       outline: none;
+    }
+
+    @include tabletM {
+      height: 32px;
+    }
+    @include tabletMl {
+      height: 32px;
+    }
+    @include tabletL {
+      height: 34px;
+    }
+    @include tabletLl {
+      height: 34px;
     }
   }
 
   &-textarea {
     padding-top: 5px;
     flex-grow: 1;
+    min-height: 50px;
+    @include mobileM {
+      min-height: 100px;
+    }
+    @include tabletS {
+      min-height: 100px;
+    }
+
     resize: none;
   }
 
@@ -58,23 +134,25 @@
   }
 
   &-submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 10px;
-    width: 100px;
-    height: 45px;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 13px;
-    border-radius: 10px;
-    color: $normalText;
-    font-family: $default-font;
-    border: 1px solid $titleTextTwo;
-    background-color: #df9f7c;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    margin-bottom: 10px;
+    @include btn;
+    @include mobileL {
+      width: 110px;
+      height: 50px;
+    }
+    @include tabletS {
+      width: 110px;
+      height: 50px;
+    }
+    @include tabletM {
+      font-size: 15px;
+      width: 130px;
+      height: 55px;
+    }
+    @include desktopS {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 }
