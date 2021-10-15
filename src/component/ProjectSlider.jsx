@@ -21,7 +21,7 @@ const projects = [
     imgL: webpackImgL,
     txt: 'The project was created in order to create a simple, universal template that will be used as a base for future projects. The project was implemented based on Webpack 5 with React 17 using Babel, HMR, Sass, and PostCSS with a hot dev server and an optimized production build.',
     code: 'https://github.com/B4rt0sz/react-webpack-5-boilerplate',
-    site: null,
+    site: 'https://webpack5boilerplate.netlify.app/',
   },
   {
     title: 'Portfolio',
@@ -31,7 +31,7 @@ const projects = [
     imgL: portfolioImgL,
     txt: 'The project of my portfolio website. It shows the development of my acquired programming skills, it also presents my other projects. To create it, I used my Webpack template and React, SASS and other APIs which are responsible for animations, form validations, and more (for more see the code).',
     code: 'https://github.com/B4rt0sz/my-portfolio',
-    site: null,
+    site: 'https://bartoszszucko.netlify.app/',
   },
   {
     title: 'WeatherApp',
