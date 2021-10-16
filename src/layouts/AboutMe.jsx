@@ -120,6 +120,7 @@ const AboutMe = () => {
           className='aboutMe__cv-pl'
           download='Bartosz_Szucko_CV_PL'
           href={PolishCv}
+          target='_blank'
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.0 }}
         >
@@ -129,6 +130,7 @@ const AboutMe = () => {
           className='aboutMe__cv-en'
           download='Bartosz_Szucko_CV_EN'
           href={EnglishCv}
+          target='_blank'
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.0 }}
         >
