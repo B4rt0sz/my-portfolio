@@ -2,8 +2,6 @@ import { motion } from 'framer-motion'
 
 import Hamburger from '../component/Hamburger'
 
-import PolishCv from '../../public/files/Bartosz_Szucko_CV_PL.pdf'
-import EnglishCv from '../../public/files/Bartosz_Szucko_CV_EN.pdf'
 import heroPhotoXs from '../../public/images/photos/myPhotoXs.jpg'
 import heroPhotoSw from '../../public/images/photos/myPhotoSw.jpg'
 import heroPhotoS from '../../public/images/photos/myPhotoS.jpg'
@@ -13,6 +11,11 @@ import heroPhotoXl from '../../public/images/photos/myPhotoXl.jpg'
 import heroPhotoXw from '../../public/images/photos/myPhotoXw.jpg'
 import heroPhotoXlw from '../../public/images/photos/myPhotoXlw.jpg'
 import heroPhotoXll from '../../public/images/photos/myPhotoXll.jpg'
+
+const PolishCv =
+  'https://drive.google.com/uc?id=16EkS1uzPwM76CzhWVZASq-VevxUjW5H-&export=download'
+const EnglishCv =
+  'https://drive.google.com/uc?id=1xFDzZmhUypk_uJHlF9BS3uXCDXT3SRXr&export=download'
 
 const AboutMe = () => {
   const pageVariants = {
