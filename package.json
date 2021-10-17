@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "version": "0.0.1",
-  "description": "Project of my own portfolio website.",
+  "version": "1.0.0",
+  "description": "The project of my portfolio website. It shows the development of my acquired programming skills, it also presents my other projects.",
   "author": "Bartosz Szućko",
   "license": "UNLICENSED",
   "private": true,
