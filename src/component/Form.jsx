@@ -6,28 +6,29 @@ import emailjs from 'emailjs-com'
 import { motion } from 'framer-motion'
 
 const Form = () => {
-  const [message, setMessage] = useState(false)
+  const [messageSend, setMessageSend] = useState(false)
   const form = useRef()
 
   const schema = yup.object().shape({
-    user_name: yup
+    name: yup
       .string()
+      .required('Please enter your name.')
       .min(2, 'At least two characters are required.')
-      .max(30, 'The max number of characters is thirty.')
-      .required('Please enter your name.'),
-    user_email: yup
+      .matches(/^[a-z][a-z\s]*$/, 'Name should not contain numbers')
+      .max(30, 'The max number of characters is thirty.'),
+    email: yup
       .string()
+      .required('Please enter your email address.')
       .min(2, 'At least two characters are required.')
-      .email('Please enter a valid email address.')
-      .required('Please enter your email address.'),
-    user_message: yup
+      .email('Please enter a valid email address.'),
+    message: yup
       .string()
+      .required('Please enter your message.')
       .min(10, 'At least ten characters are required.')
       .max(
-        2000,
+        1000,
         'Spam Suspected! Please shorten your message to two thousand characters.'
-      )
-      .required('Please enter your message.'),
+      ),
   })
 
   const {
@@ -47,8 +48,8 @@ const Form = () => {
       'user_ROylFzSvpK8X47yypl1cM'
     )
     reset()
-    setMessage(true)
-    setTimeout(() => setMessage(false), 5000)
+    setMessageSend(true)
+    setTimeout(() => setMessageSend(false), 2000)
   }
 
   return (
@@ -60,44 +61,38 @@ const Form = () => {
         onSubmit={handleSubmit(sendEmail)}
         ref={form}
       >
-        <motion.input
+        <input
           className='contact__form-input'
           type='text'
           placeholder='Name'
-          {...register('user_name')}
-          whileFocus={{
-            scale: 1.01,
-            boxShadow: '0px 0px 4px #B68E78',
-          }}
+          {...register('name')}
         />
-        <p className='contact__form-error'>{errors.user_name?.message}</p>
-        <motion.input
+        {errors.name && (
+          <p className='contact__form-error'>{errors.name.message}</p>
+        )}
+        <input
           className='contact__form-input'
           type='text'
           placeholder='E-mail'
-          {...register('user_email')}
-          whileFocus={{
-            scale: 1.01,
-            boxShadow: '0px 0px 4px #B68E78',
-          }}
+          {...register('email')}
         />
-        <p className='contact__form-error'>{errors.user_email?.message}</p>
-        <motion.textarea
+        {errors.email && (
+          <p className='contact__form-error'>{errors.email.message}</p>
+        )}
+        <textarea
           className='contact__form-textarea'
           placeholder='Enter your message...'
-          {...register('user_message')}
-          whileFocus={{
-            scale: 1.01,
-            boxShadow: '0px 0px 4px #B68E78',
-          }}
-        ></motion.textarea>
-        <p className='contact__form-error'>{errors.user_message?.message}</p>
-        {message ? (
+          {...register('message')}
+        />
+        {errors.message && (
+          <p className='contact__form-error'>{errors.message.message}</p>
+        )}
+        {messageSend && (
           <p className='contact__form-success'>Your message has been sent!</p>
-        ) : null}
+        )}
         <motion.button
-          type='submit'
           className='contact__form-submit'
+          type='submit'
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.0 }}
         >
