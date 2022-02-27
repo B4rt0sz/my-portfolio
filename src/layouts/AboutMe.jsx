@@ -12,11 +12,6 @@ import heroPhotoXw from '../../public/images/photos/myPhotoXw.jpg'
 import heroPhotoXlw from '../../public/images/photos/myPhotoXlw.jpg'
 import heroPhotoXll from '../../public/images/photos/myPhotoXll.jpg'
 
-const PolishCv =
-  'https://drive.google.com/uc?id=16EkS1uzPwM76CzhWVZASq-VevxUjW5H-&export=download'
-const EnglishCv =
-  'https://drive.google.com/uc?id=1xFDzZmhUypk_uJHlF9BS3uXCDXT3SRXr&export=download'
-
 const AboutMe = () => {
   const pageVariants = {
     initial: {
@@ -119,7 +114,7 @@ const AboutMe = () => {
         <motion.a
           className='aboutMe__cv-pl'
           download='Bartosz_Szucko_CV_PL'
-          href={PolishCv}
+          href='/files/Bartosz_Szucko_CV_PL.pdf'
           target='_blank'
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.0 }}
@@ -129,7 +124,7 @@ const AboutMe = () => {
         <motion.a
           className='aboutMe__cv-en'
           download='Bartosz_Szucko_CV_EN'
-          href={EnglishCv}
+          href='/files/Bartosz_Szucko_CV_EN.pdf'
           target='_blank'
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.0 }}
