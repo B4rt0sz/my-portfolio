@@ -36,6 +36,11 @@ module.exports = {
           to: 'files',
           noErrorOnMissing: true,
         },
+        {
+          from: path.resolve(__dirname, '..', './public/images'),
+          to: 'images',
+          noErrorOnMissing: true,
+        },
       ],
     }),
     new MiniCssExtractPlugin({
