@@ -1,141 +1,93 @@
 .mainPage {
-  min-height: 100vh;
-  display: grid;
+  @include container;
 
   &__mainTitle {
     @include mainTitle();
-    text-align: justify;
-    @include mobileM {
-      font-size: 45px;
-    }
-    @include mobileL {
-      font-size: 50px;
-    }
-    @include tabletS {
-      margin-bottom: 30px;
-    }
-    @include tabletM {
-      font-size: 60px;
-    }
-    @include tabletMl {
-      font-size: 50px;
-    }
-    @include tabletL {
-      font-size: 70px;
-    }
-    @include tabletLl {
-      font-size: 70px;
-    }
   }
 
   &__text {
-    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0;
     justify-self: center;
     text-align: center;
     align-self: center;
-    font-size: 25px;
+    font-size: 1.375rem;
     max-width: 76%;
-    min-height: 120px;
+    min-height: 8.5rem;
     color: $titleTextOne;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    @include mobileM {
-      font-size: 28px;
-      min-height: 140px;
+
+    @media (min-width: 390px) and (min-height: 568px) {
+      font-size: 1.75rem;
     }
-    @include mobileL {
-      font-size: 29px;
+    @media (min-width: 412px) and (min-height: 568px) {
+      min-height: 9rem;
+      font-size: 1.875rem;
     }
-    @include mobileX {
-      font-size: 31px;
-      min-height: 145px;
+    @media (min-width: 428px) and (min-height: 568px) {
+      min-height: 9.5rem;
+      font-size: 2rem;
     }
-    @include tabletS {
-      font-size: 23px;
+    @media (min-width: 768px) and (min-height: 568px) {
+      font-size: 2.25rem;
     }
-    @include tabletM {
-      font-size: 38px;
-      max-width: 70%;
+    @media (min-width: 820px) and (min-height: 568px) {
+      font-size: 2.5rem;
     }
-    @include tabletMl {
-      font-size: 30px;
-    }
-    @include tabletL {
-      font-size: 46px;
-      max-width: 70%;
-      padding: 30px 0;
-      min-height: 200px;
-    }
-    @include tabletLl {
-      font-size: 42px;
+    @media (min-width: 1280px) {
+      font-size: 2.75rem;
     }
   }
 
   &__secondTitle {
-    justify-self: center;
     text-align: center;
-    align-self: center;
-    margin: 0 10px;
+    min-width: 18rem;
+    margin: 0.75rem;
     font-weight: 700;
-    font-size: 30px;
-    min-width: 285px;
+    font-size: 1.875rem;
     color: $titleTextOne;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    @include mobileM {
-      font-size: 34px;
-      padding: 10px 0;
+
+    @media (min-width: 360px) and (min-height: 568px) {
+      font-size: 2rem;
     }
-    @include mobileL {
-      font-size: 36px;
+    @media (min-width: 390px) and (min-height: 568px) {
+      font-size: 2.25rem;
     }
-    @include mobileX {
-      font-size: 39px;
+    @media (min-width: 428px) and (min-height: 568px) {
+      font-size: 2.5rem;
     }
-    @include tabletS {
-      font-size: 36px;
-      padding: 10px 0;
+    @media (min-width: 820px) and (min-height: 568px) {
+      font-size: 2.75rem;
     }
-    @include tabletM {
-      font-size: 44px;
+    @media (min-width: 1024px) {
+      font-size: 3rem;
     }
-    @include tabletMl {
-      font-size: 40px;
-    }
-    @include tabletL {
-      font-size: 54px;
-    }
-    @include tabletLl {
-      font-size: 54px;
+    @media (min-width: 1280px) {
+      font-size: 3.25rem;
     }
   }
 
   &__nav {
     justify-self: center;
     align-self: center;
-    min-width: 150px;
+    min-width: 9.5rem;
+    margin: 0.75rem 0;
   }
 
   &__footer {
-    align-self: center;
-    text-align: justify;
+    align-self: flex-start;
+    font-size: 0.688rem;
+    margin: 0.75rem 0;
     margin-left: 10%;
-    font-size: 11px;
-    @include mobileM {
-      font-size: 13px;
+
+    @media (min-width: 375px) {
+      font-size: 0.813rem;
     }
-    @include mobileL {
-      font-size: 15px;
-    }
-    @include mobileX {
-      font-size: 17px;
-    }
-    @include tabletS {
-      font-size: 17px;
-    }
-    @include tabletM {
-      font-size: 20px;
-    }
-    @include tabletMl {
-      font-size: 20px;
+    @media (min-width: 412px) {
+      font-size: 0.938rem;
     }
   }
 }

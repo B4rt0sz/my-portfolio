@@ -1,54 +1,32 @@
 .contact__container {
-  display: grid;
-  margin: 0 5%;
-  @include mobileM {
-    margin: 0 8%;
-  }
-  @include tabletS {
-    margin: 0 20%;
-  }
-  @include tabletM {
-    margin: 0 15%;
-  }
-  @include desktopS {
-    margin: 0 28%;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   &-title {
-    font-size: 25px;
+    margin-bottom: 1rem;
     @include smallTitle;
-    @include mobileM {
-      font-size: 28px;
+    font-size: 1.625rem;
+
+    @media (min-width: 360px) and (min-height: 568px) {
+      font-size: 2rem;
     }
-    @include mobileL {
-      font-size: 30px;
+    @media (min-width: 390px) and (min-height: 568px) {
+      font-size: 2.25rem;
     }
-    @include mobileX {
-      margin-bottom: 10px;
-      font-size: 34px;
+    @media (min-width: 428px) and (min-height: 568px) {
+      font-size: 2.5rem;
     }
-    @include tabletS {
-      font-size: 26px;
-      margin: 10px 0;
+    @media (min-width: 820px) and (min-height: 568px) {
+      font-size: 2.75rem;
     }
-    @include tabletM {
-      font-size: 44px;
+    @media (min-width: 1024px) {
+      font-size: 3rem;
     }
-    @include tabletMl {
-      font-size: 29px;
-      margin: 20px 0;
-    }
-    @include tabletL {
-      font-size: 48px;
-    }
-    @include tabletLl {
-      font-size: 40px;
-    }
-    @include desktopS {
-      font-size: 44px;
-    }
-    @include desktopM {
-      font-size: 46px;
+    @media (min-width: 1280px) {
+      font-size: 3.25rem;
     }
   }
 }
@@ -60,9 +38,9 @@
 
   &-input,
   &-textarea {
-    width: 80%;
-    height: 25px;
-    margin-top: 5px;
+    width: 250px;
+    height: 1.625rem;
+    margin: 5px 0;
     padding: 0 5px;
     border: none;
     border-radius: 8px;
@@ -70,89 +48,58 @@
     font-family: $default-font;
     background-color: $texbackground;
 
-    &::placeholder {
-      font-size: 12px;
-      color: #555;
+    @media (min-width: 375px) {
+      height: 2rem;
+    }
+    @media (min-width: 390px) {
+      width: 278px;
+    }
+    @media (min-width: 640px) {
+      width: 308px;
+    }
+    @media (min-width: 768px) {
+      width: 400px;
+    }
 
-      @include tabletM {
-        font-size: 13px;
-      }
-      @include tabletMl {
-        font-size: 13px;
-      }
-      @include tabletL {
-        font-size: 14px;
-      }
-      @include tabletLl {
-        font-size: 14px;
-      }
+    &::placeholder {
+      font-size: 0.75rem;
+      color: #555;
     }
 
     &:focus {
       outline: none;
-    }
-
-    @include tabletM {
-      height: 32px;
-    }
-    @include tabletMl {
-      height: 32px;
-    }
-    @include tabletL {
-      height: 34px;
-    }
-    @include tabletLl {
-      height: 34px;
     }
   }
 
   &-textarea {
     padding-top: 5px;
     flex-grow: 1;
-    min-height: 50px;
-    @include mobileM {
-      min-height: 100px;
-    }
-    @include tabletS {
-      min-height: 100px;
-    }
-
+    min-height: 2.5rem;
     resize: none;
+
+    @media (min-width: 375px) {
+      min-height: 5rem;
+    }
+    @media (min-width: 768px) {
+      min-height: 10rem;
+    }
   }
 
   &-error {
     width: 250px;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #cc0000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &-success {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #008000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &-submit {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 0.625rem 0;
     @include btn;
-    @include mobileL {
-      width: 110px;
-      height: 50px;
-    }
-    @include tabletS {
-      width: 110px;
-      height: 50px;
-    }
-    @include tabletM {
-      font-size: 15px;
-      width: 130px;
-      height: 55px;
-    }
-    @include desktopS {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
   }
 }

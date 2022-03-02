@@ -1,34 +1,8 @@
 .error {
-  min-height: 100vh;
-  display: grid;
-  justify-items: center;
+  @include container;
 
   &__mainTitle {
     @include mainTitle();
-    text-align: center;
-    margin: 0;
-    margin-top: 50px;
-    @include mobileM {
-      font-size: 45px;
-    }
-    @include mobileL {
-      font-size: 50px;
-    }
-    @include tabletS {
-      margin-top: 10px;
-    }
-    @include tabletM {
-      font-size: 60px;
-    }
-    @include tabletMl {
-      font-size: 50px;
-    }
-    @include tabletL {
-      font-size: 70px;
-    }
-    @include tabletLl {
-      font-size: 70px;
-    }
   }
 
   &__hamburger {
@@ -36,21 +10,11 @@
   }
 
   &__gif {
-    align-self: center;
     &-img {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 80%;
-      @include tabletS {
-        width: 40%;
-      }
-      @include tabletLl {
-        width: 60%;
-      }
-      @include desktopS {
-        width: 70%;
-      }
     }
   }
 
@@ -59,14 +23,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    @include tabletM {
-      @media (min-height: 950px) {
-        justify-content: space-around;
-      }
-    }
-    @include tabletLl {
-      justify-content: space-around;
-    }
 
     &-text1,
     &-text2 {
@@ -75,57 +31,26 @@
     }
 
     &-text1 {
-      font-size: 21px;
       width: 76%;
       text-align: center;
-      @include mobileX {
-        font-size: 23px;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+
+      @media (min-width: 375px) {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
       }
-      @include tabletS {
-        font-size: 23px;
-        margin-bottom: 20px;
-      }
-      @include tabletM {
-        font-size: 30px;
-      }
-      @include tabletMl {
-        font-size: 28px;
-        margin-bottom: 0;
-      }
-      @include tabletL {
-        font-size: 40px;
-      }
-      @include tabletLl {
-        font-size: 40px;
-      }
-      @include desktopS {
-        font-size: 48px;
-        margin-bottom: 30px;
+      @media (min-width: 768px) {
+        margin-bottom: 3rem;
       }
     }
     &-text2 {
-      text-align: center;
-      font-size: 15px;
       width: 88%;
-      margin-bottom: 20px;
-      @include mobileM {
-        width: 80%;
-      }
-      @include mobileX {
-        font-size: 17px;
-      }
-      @include tabletM {
-        width: 60%;
-        font-size: 24px;
-      }
-      @include tabletL {
-        font-size: 30px;
-      }
-      @include tabletLl {
-        font-size: 24px;
-      }
-      @include desktopS {
-        font-size: 28px;
+      text-align: center;
+      font-size: 1rem;
+
+      @media (min-width: 375px) {
+        font-size: 1.25rem;
       }
 
       span {

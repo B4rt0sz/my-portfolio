@@ -3,17 +3,49 @@
     position: absolute;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: -3;
   }
+
   &__shape2 {
     position: absolute;
     top: 40%;
-    right: 0px;
+    right: 0;
     z-index: -3;
+    width: 60%;
+
+    @media (min-width: 568px) {
+      width: 50%;
+    }
+    @media (min-width: 768px) and (orientation: landscape) {
+      width: 40%;
+    }
+    @media (min-width: 1024px) {
+      width: 55%;
+    }
+    @media (min-width: 1280px) {
+      width: 40%;
+    }
   }
+
   &__shape3 {
     position: absolute;
     bottom: 0;
+    left: 0;
     z-index: -3;
+    width: 60%;
+
+    @media (min-width: 568px) {
+      width: 40%;
+    }
+    @media (min-width: 768px) and (orientation: landscape) {
+      width: 30%;
+    }
+    @media (min-width: 1024px) {
+      width: 35%;
+    }
+    @media (min-width: 1280px) {
+      width: 30%;
+    }
   }
 }

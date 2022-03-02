@@ -1,31 +1,8 @@
 .aboutMe {
-  min-height: 100vh;
-  display: grid;
+  @include container;
 
   &__mainTitle {
     @include mainTitle();
-    text-align: justify;
-    @include mobileM {
-      font-size: 45px;
-    }
-    @include mobileL {
-      font-size: 50px;
-    }
-    @include tabletS {
-      margin-bottom: 30px;
-    }
-    @include tabletM {
-      font-size: 60px;
-    }
-    @include tabletMl {
-      font-size: 50px;
-    }
-    @include tabletL {
-      font-size: 70px;
-    }
-    @include tabletLl {
-      font-size: 70px;
-    }
   }
 
   &__hamburger {
@@ -33,185 +10,115 @@
   }
 
   &__info {
-    justify-self: center;
-    text-align: justify;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-areas:
-      'photo text1'
-      'text2 text2';
-    margin: 0 10px;
-    padding: 10px 0px;
-    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0 0.625rem;
+    padding: 0.625rem;
+    border-radius: 1.625rem;
     background: $texbackground;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    @include mobileM {
-      margin: 0 5%;
+
+    @media (min-width: 568px) {
+      width: 80%;
     }
-    @include tabletS {
-      margin: 0 15%;
-      grid-template-columns: 30% 70%;
+    @media (min-width: 768px) {
+      padding: 1.25rem;
+      width: 70%;
     }
-    @include tabletM {
-      margin: 0 15%;
-    }
-    @include desktopS {
-      margin: 0 20%;
+    @media (min-width: 1024px) {
+      width: 60%;
     }
 
     &-photo {
-      grid-area: photo;
-      margin: auto auto;
+      width: 40%;
+
+      @media (min-width: 568px) {
+        width: 30%;
+      }
+      @media (min-width: 1180px) {
+        width: 20%;
+      }
+
       img {
-        border-radius: 25px;
+        width: 100%;
+        border-radius: 1.625rem;
       }
     }
 
     p {
       line-height: 1.1;
-      font-size: 15px;
+      font-size: 0.875rem;
       justify-self: center;
-      @include mobileM {
-        font-size: 18px;
+
+      @media (min-width: 360px) {
+        font-size: 1rem;
       }
-      @include mobileL {
-        font-size: 19px;
-        @media (min-height: 850px) {
-          font-size: 21px;
-        }
+      @media (min-width: 390px) {
+        font-size: 1.063rem;
       }
-      @include tabletS {
-        font-size: 18px;
-        line-height: 1.3;
+      @media (min-width: 412px) {
+        font-size: 1.188rem;
       }
-      @include tabletM {
-        font-size: 28px;
+      @media (min-width: 568px) {
+        font-size: 1.25rem;
       }
-      @include tabletMl {
-        font-size: 20px;
+      @media (min-width: 640px) {
+        font-size: 1.5rem;
       }
-      @include tabletL {
-        font-size: 36px;
-      }
-      @include tabletLl {
-        font-size: 26px;
-      }
-      @include desktopS {
-        font-size: 30px;
-      }
-      @include desktopM {
-        font-size: 32px;
+      @media (min-width: 812px) {
+        font-size: 1.625rem;
       }
     }
 
     &-text1 {
-      grid-area: text1;
-      align-self: center;
-      max-width: 90%;
-    }
-    &-text2 {
-      grid-area: text2;
-      max-width: 94%;
+      width: 60%;
+      padding-left: 0.625rem;
+
+      @media (min-width: 375px) {
+        margin-top: 0.625rem;
+      }
+      @media (min-width: 568px) {
+        width: 70%;
+      }
+      @media (min-width: 768px) {
+        padding-left: 1.25rem;
+      }
+      @media (min-width: 1180px) {
+        width: 80%;
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
   &__cv {
-    justify-self: center;
-    display: grid;
-    grid-template-areas:
-      'title title'
-      'resumepl resumeen';
-    justify-content: space-around;
-    justify-items: center;
-    margin: 10px 0;
-    min-width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @media (min-width: 568px) {
+      margin: 1rem;
+    }
 
     &-title {
-      grid-area: title;
+      width: 100%;
       @include smallTitle;
-      font-size: 20px;
-      padding-bottom: 5px;
-      @include mobileM {
-        font-size: 24px;
-        padding-bottom: 10px;
-      }
-      @include mobileL {
-        font-size: 26px;
-        @media (min-height: 750px) {
-          font-size: 28px;
-        }
-      }
-      @include tabletS {
-        font-size: 26px;
-        padding: 20px 0;
-      }
-      @include tabletM {
-        font-size: 36px;
-      }
-      @include tabletMl {
-        @media (min-height: 600px) {
-          font-size: 30px;
-        }
-      }
-      @include tabletL {
-        font-size: 40px;
-      }
-      @include tabletLl {
-        font-size: 36px;
-      }
-      @include desktopS {
-        font-size: 40px;
-      }
-      @include desktopM {
-        font-size: 44px;
-      }
-    }
+      font-size: 1.625rem;
+      margin-bottom: 1rem;
 
-    &-pl {
-      grid-area: resumepl;
-    }
-    &-en {
-      grid-area: resumeen;
+      @media (min-width: 375px) {
+        margin-bottom: 1.25rem;
+      }
+      @media (min-width: 568px) {
+        font-size: 2rem;
+      }
     }
 
     &-pl,
     &-en {
       @include btn;
-      @include mobileL {
-        width: 110px;
-        height: 50px;
-        @media (min-height: 750px) {
-          width: 115px;
-          height: 55px;
-        }
-      }
-      @include tabletS {
-        width: 110px;
-        height: 50px;
-      }
-      @include tabletM {
-        font-size: 15px;
-        width: 130px;
-        height: 65px;
-      }
-      @include tabletMl {
-        @media (min-height: 700px) {
-          font-size: 15px;
-          width: 130px;
-          height: 65px;
-          margin: 0 20px;
-        }
-      }
-      @include tabletL {
-        font-size: 16px;
-        width: 140px;
-        height: 70px;
-      }
-      @include desktopS {
-        font-size: 16px;
-        width: 140px;
-        height: 70px;
-      }
     }
   }
 }

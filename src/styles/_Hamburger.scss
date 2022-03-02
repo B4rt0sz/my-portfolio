@@ -10,19 +10,19 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
-    @include mobileL {
+    @media (min-width: 375px) and (orientation: portrait) {
       top: 30px;
       right: 20px;
     }
-    @include tabletS {
+    @media (min-width: 560px) and (orientation: landscape) {
       top: 30px;
       right: 20px;
     }
-    @include tabletL {
+    @media (min-width: 1020px) and (orientation: portrait) {
       width: 40px;
       height: 40px;
     }
-    @include tabletLl {
+    @media (min-width: 1020px) and (orientation: landscape) {
       width: 40px;
       height: 40px;
     }
@@ -34,14 +34,14 @@
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
       transition: all 0.5s ease-in-out;
 
-      @include tabletM {
+      @media (min-width: 720px) and (orientation: portrait) {
         width: 32px;
       }
-      @include tabletL {
+      @media (min-width: 1020px) and (orientation: portrait) {
         width: 36px;
         height: 4px;
       }
-      @include tabletLl {
+      @media (min-width: 1020px) and (orientation: landscape) {
         width: 36px;
         height: 4px;
       }
@@ -57,14 +57,14 @@
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
         transition: all 0.5s ease-in-out;
 
-        @include tabletM {
+        @media (min-width: 720px) and (orientation: portrait) {
           width: 32px;
         }
-        @include tabletL {
+        @media (min-width: 1020px) and (orientation: portrait) {
           width: 36px;
           height: 4px;
         }
-        @include tabletLl {
+        @media (min-width: 1020px) and (orientation: landscape) {
           width: 36px;
           height: 4px;
         }

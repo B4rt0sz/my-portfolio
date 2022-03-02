@@ -1,32 +1,8 @@
 .contact {
-  min-height: 100vh;
-  display: grid;
-  justify-content: center;
+  @include container;
 
   &__mainTitle {
-    @include mainTitle();
-    text-align: justify;
-    @include mobileM {
-      font-size: 45px;
-    }
-    @include mobileL {
-      font-size: 50px;
-    }
-    @include tabletS {
-      margin-bottom: 30px;
-    }
-    @include tabletM {
-      font-size: 60px;
-    }
-    @include tabletMl {
-      font-size: 50px;
-    }
-    @include tabletL {
-      font-size: 70px;
-    }
-    @include tabletLl {
-      font-size: 70px;
-    }
+    @include mainTitle;
   }
 
   &__hamburger {
@@ -34,146 +10,70 @@
   }
 
   &__info {
-    justify-self: center;
-    align-self: center;
     text-align: justify;
-    padding: 10px 10px;
+    padding: 0.625rem;
+    margin: 0.75rem;
     max-width: 85%;
-    border-radius: 25px;
+    border-radius: 1.625rem;
     background: $texbackground;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    @include mobileM {
-      margin: 0 12%;
-    }
-    @include tabletS {
-      margin: 0 20%;
-    }
-    @include tabletM {
-      margin: 0 15%;
-    }
-    @include desktopS {
-      margin: 0 29%;
-    }
 
     &-text {
-      line-height: 1.2;
-      font-size: 15px;
       text-align: justify;
-      @include mobileL {
-        font-size: 16px;
+      font-size: 0.875rem;
+      line-height: 1.2;
+
+      @media (min-width: 375px) and (min-height: 568px) {
+        font-size: 1rem;
       }
-      @include mobileX {
-        font-size: 17px;
+      @media (min-width: 428px) and (min-height: 568px) {
+        font-size: 1.125rem;
       }
-      @include tabletM {
-        font-size: 27px;
-      }
-      @include tabletL {
-        font-size: 36px;
-      }
-      @include desktopS {
-        font-size: 24px;
-      }
-      @include desktopM {
-        font-size: 25px;
+      @media (min-width: 820px) and (min-height: 568px) {
+        font-size: 1.5rem;
       }
     }
   }
 
   &__social {
-    display: grid;
-    grid-template-areas:
-      'title title'
-      'linkedin git';
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    @include mobileM {
-      margin: 0 5%;
-    }
-    @include tabletS {
-      margin: 0 15%;
-    }
-    @include tabletM {
-      margin: 0 15%;
-    }
-    @include desktopS {
-      margin: 0 18%;
-    }
+    margin: 0.75rem;
 
     &-title {
-      grid-area: title;
-      font-size: 25px;
+      width: 100%;
+      margin-bottom: 1rem;
       @include smallTitle;
-      @include mobileM {
-        font-size: 28px;
+      font-size: 1.625rem;
+
+      @media (min-width: 360px) and (min-height: 568px) {
+        font-size: 2.125rem;
       }
-      @include mobileL {
-        font-size: 30px;
+      @media (min-width: 375px) and (min-height: 568px) {
+        font-size: 2.375rem;
       }
-      @include mobileX {
-        margin-bottom: 10px;
-        font-size: 34px;
-      }
-      @include tabletS {
-        font-size: 26px;
-        margin: 10px 0;
-      }
-      @include tabletM {
-        font-size: 44px;
-      }
-      @include tabletMl {
-        font-size: 29px;
-        margin: 20px 0;
-      }
-      @include tabletL {
-        font-size: 48px;
-      }
-      @include tabletLl {
-        font-size: 40px;
-      }
-      @include desktopS {
-        font-size: 44px;
-      }
-      @include desktopM {
-        font-size: 46px;
+      @media (min-width: 412px) and (min-height: 568px) {
+        font-size: 2.625rem;
       }
     }
 
     &-in {
-      grid-area: linkedin;
-      @include tabletM {
-        margin-left: 20px;
-      }
-      @include tabletL {
-        margin-left: 40px;
-      }
-      @include tabletLl {
-        margin-left: 40px;
-      }
-      @include desktopS {
-        margin-left: 120px;
-      }
+      margin-right: 2rem;
     }
 
     &-git {
-      grid-area: git;
-      @include tabletM {
-        margin-right: 20px;
-      }
-      @include tabletL {
-        margin-right: 40px;
-      }
-      @include tabletLl {
-        margin-right: 40px;
-      }
-      @include desktopS {
-        margin-right: 120px;
-      }
+      margin-left: 2rem;
     }
 
     img {
+      width: 3rem;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+      @media (min-width: 768px) and (min-height: 568px) {
+        width: 4rem;
+      }
     }
   }
 }

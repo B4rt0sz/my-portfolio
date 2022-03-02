@@ -1,32 +1,9 @@
 .projects {
-  min-height: 100vh;
-  display: grid;
-  overflow: hidden;
+  @include container;
 
   &__mainTitle {
     @include mainTitle();
-    text-align: justify;
-    margin-top: 0;
-    margin-bottom: 20px;
-    @include mobileM {
-      font-size: 50px;
-    }
-
-    @include tabletS {
-      margin-bottom: 30px;
-    }
-    @include tabletM {
-      font-size: 60px;
-    }
-    @include tabletMl {
-      font-size: 50px;
-    }
-    @include tabletL {
-      font-size: 70px;
-    }
-    @include tabletLl {
-      font-size: 70px;
-    }
+    margin-top: 10%;
   }
 
   &__hamburger {
