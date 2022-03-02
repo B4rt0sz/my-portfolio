@@ -3,8 +3,6 @@ import { motion } from 'framer-motion'
 
 import Hamburger from '../component/Hamburger'
 
-import errorGif from '../../public/images/photos/errorPage.gif'
-
 const Error = () => {
   let history = useHistory()
   const handleRedirect = () => history.goBack()
@@ -57,13 +55,17 @@ const Error = () => {
       </motion.div>
 
       <div className='error__gif'>
-        <img className='error__gif-img' src={errorGif} alt='error_gif' />
+        <img
+          className='error__gif-img'
+          src='/images/photos/errorPage.gif'
+          alt='error_gif'
+        />
       </div>
 
       <div className='error__info'>
         <p className='error__info-text1'>
-          {`I knew you will be curious if this page exists, I hope you are not
-          disappointed! ;)`}
+          I knew you will be curious if this page exists, I hope you are not
+          disappointed! ;)
         </p>
         <p className='error__info-text2'>
           Use menu to choose section or you can click{' '}

@@ -2,16 +2,6 @@ import { motion } from 'framer-motion'
 
 import Hamburger from '../component/Hamburger'
 
-import heroPhotoXs from '../../public/images/photos/myPhotoXs.jpg'
-import heroPhotoSw from '../../public/images/photos/myPhotoSw.jpg'
-import heroPhotoS from '../../public/images/photos/myPhotoS.jpg'
-import heroPhotoM from '../../public/images/photos/myPhotoM.jpg'
-import heroPhotoL from '../../public/images/photos/myPhotoL.jpg'
-import heroPhotoXl from '../../public/images/photos/myPhotoXl.jpg'
-import heroPhotoXw from '../../public/images/photos/myPhotoXw.jpg'
-import heroPhotoXlw from '../../public/images/photos/myPhotoXlw.jpg'
-import heroPhotoXll from '../../public/images/photos/myPhotoXll.jpg'
-
 const AboutMe = () => {
   const pageVariants = {
     initial: {
@@ -61,41 +51,9 @@ const AboutMe = () => {
       </motion.div>
 
       <div className='aboutMe__info'>
-        <picture className='aboutMe__info-photo'>
-          <source
-            media='(orientation: portrait) and (min-width: 1024px)'
-            srcSet={heroPhotoXll}
-          />
-          <source
-            media='(orientation: landscape) and (min-width:1440px)'
-            srcSet={heroPhotoXlw}
-          />
-          <source
-            media='(orientation: portrait) and (min-width:768px)'
-            srcSet={heroPhotoXl}
-          />
-          <source
-            media='(orientation: landscape) and (min-width:1024px)'
-            srcSet={heroPhotoXw}
-          />
-          <source
-            media='(orientation: portrait) and (min-width:400px)'
-            srcSet={heroPhotoL}
-          />
-          <source
-            media='(orientation: portrait) and (min-width:375px)'
-            srcSet={heroPhotoM}
-          />
-          <source
-            media='(orientation: portrait) and (min-width:360px)'
-            srcSet={heroPhotoS}
-          />
-          <source
-            media='(orientation: landscape) and (min-width:600px)'
-            srcSet={heroPhotoSw}
-          />
-          <img src={heroPhotoXs} alt='heroPhoto' />
-        </picture>
+        <div className='aboutMe__info-photo'>
+          <img src='/images/photos/myPhoto.jpg' alt='heroPhoto' />
+        </div>
         <p className='aboutMe__info-text1'>
           I am a self taught developer. I learned to program from online
           courses, I put my theoretical knowledge into practice by creating my

@@ -3,44 +3,41 @@ import { Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 
-import webpackImgS from '../../public/images/projects/webpackS.png'
-import webpackImgSm from '../../public/images/projects/webpackSm.png'
-import webpackImgM from '../../public/images/projects/webpackM.png'
-import webpackImgL from '../../public/images/projects/webpackL.png'
-import portfolioImgS from '../../public/images/projects/portfolioS.png'
-import portfolioImgSm from '../../public/images/projects/portfolioSm.png'
-import portfolioImgM from '../../public/images/projects/portfolioM.png'
-import portfolioImgL from '../../public/images/projects/portfolioL.png'
-
 const projects = [
   {
     title: 'Webpack',
-    imgS: webpackImgS,
-    imgSm: webpackImgSm,
-    imgM: webpackImgM,
-    imgL: webpackImgL,
+    img: '/images/projects/webpack.png',
     txt: 'The project was created in order to create a simple, universal template that will be used as a base for future projects. The project was implemented based on Webpack 5 with React 17 using Babel, HMR, Sass, and PostCSS with a hot dev server and an optimized production build.',
     code: 'https://github.com/B4rt0sz/react-webpack-5-boilerplate',
     site: 'https://webpack5boilerplate.netlify.app/',
   },
   {
     title: 'Portfolio',
-    imgS: portfolioImgS,
-    imgSm: portfolioImgSm,
-    imgM: portfolioImgM,
-    imgL: portfolioImgL,
-    txt: 'The project of my portfolio website. It shows the development of my acquired programming skills, it also presents my other projects. To create it, I used my Webpack template and React, SASS and other APIs which are responsible for animations, form validations, and more (for more see the code).',
+    img: '/images/projects/portfolio.png',
+    txt: 'The project of my portfolio website. To create it, I used my Webpack template and React, SASS and other APIs which are responsible for animations, form validations, and more (for more see the code).',
     code: 'https://github.com/B4rt0sz/my-portfolio',
     site: 'https://bartoszszucko.netlify.app/',
   },
   {
-    title: 'WeatherApp',
-    imgS: null,
-    imgM: null,
-    imgL: null,
+    title: 'Memory Game',
+    img: '/images/projects/memoryGame.png',
+    txt: 'Test your memory with this memory game. This is an application written with React.',
+    code: 'https://github.com/B4rt0sz/react-memory-game',
+    site: 'https://pokemon-mcg.netlify.app/',
+  },
+  {
+    title: 'E-commerce Shop',
+    img: '/images/projects/ecommerce.png',
+    txt: 'To create it, I used my Webpack template, React, Firebase and other APIs which are responsible for fetching, form validations, and more (for more see the code). I encourage you to visit the Demo version which will present the result of my work.',
+    code: 'https://github.com/B4rt0sz/ecommerce-coffe-shop',
+    site: 'https://egocoffee.netlify.app/',
+  },
+  {
+    title: 'Weather App',
+    img: '/images/projects/weatherApp.png',
     txt: 'Project during coding...',
-    code: null,
-    site: null,
+    code: 'https://github.com/B4rt0sz/weather-app',
+    site: 'https://bartsweather.netlify.app/',
   },
 ]
 
@@ -138,25 +135,9 @@ const ProjectSlider = () => {
       >
         <h2 className='projects__slider-title'>{project.title}</h2>
         {project.code && (
-          <picture className='projects__slider-img'>
-            <source
-              media='(orientation: landscape) and (min-width:1200px)'
-              srcSet={project.imgL}
-            />
-            <source
-              media='(orientation: portrait) and (min-width:760px)'
-              srcSet={project.imgM}
-            />
-            <source
-              media='(orientation: landscape) and (min-width:1020px)'
-              srcSet={project.imgM}
-            />
-            <source
-              media='(orientation: landscape) and (min-width:640px)'
-              srcSet={project.imgSm}
-            />
-            <img src={project.imgS} alt={project.title} />
-          </picture>
+          <div className='projects__slider-img'>
+            <img src={project.img} alt={project.title} />
+          </div>
         )}
         <p className='projects__slider-txt'>{project.txt}</p>
         {project.code && (
@@ -177,7 +158,7 @@ const ProjectSlider = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.0 }}
             >
-              See Project
+              See Demo
             </motion.button>
           </Link>
         )}

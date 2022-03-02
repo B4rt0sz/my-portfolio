@@ -4,15 +4,6 @@ import { motion } from 'framer-motion'
 import Hamburger from '../component/Hamburger'
 import Form from '../component/Form'
 
-import linkedinImgS from '../../public/images/icons/48/linkedin48.png'
-import githubImgS from '../../public/images/icons/48/github48.png'
-import linkedinImgM from '../../public/images/icons/64/linkedin64.png'
-import githubImgM from '../../public/images/icons/64/github64.png'
-import linkedinImgL from '../../public/images/icons/72/linkedin72.png'
-import githubImgL from '../../public/images/icons/72/github72.png'
-import linkedinImgX from '../../public/images/icons/96/linkedin96.png'
-import githubImgX from '../../public/images/icons/96/github96.png'
-
 const Contact = () => {
   const pageVariants = {
     initial: {
@@ -74,62 +65,22 @@ const Contact = () => {
           to={{ pathname: 'https://www.linkedin.com/in/bartoszszucko/' }}
           target='_blank'
         >
-          <picture className='contact__social-in'>
-            <source
-              media='(orientation: portrait) and (min-width:1020px)'
-              srcSet={linkedinImgX}
-            />
-            <source
-              media='(orientation: portrait) and (min-width:600px)'
-              srcSet={linkedinImgL}
-            />
-            <source
-              media='(orientation: landscape) and (min-width:1000px)'
-              srcSet={linkedinImgL}
-            />
-            <source
-              media='(orientation: portrait) and (min-width:360px)'
-              srcSet={linkedinImgM}
-            />
-            <source
-              media='(orientation: landscape) and (min-width:600px)'
-              srcSet={linkedinImgM}
-            />
+          <div className='contact__social-in'>
             <motion.img
               whileHover={{ scale: 1.1 }}
-              src={linkedinImgS}
+              src='/images/icons/linkedin.png'
               alt='linkedin'
             />
-          </picture>
+          </div>
         </Link>
         <Link to={{ pathname: 'https://github.com/B4rt0sz/' }} target='_blank'>
-          <picture className='contact__social-git'>
-            <source
-              media='(orientation: portrait) and (min-width:1020px)'
-              srcSet={githubImgX}
-            />
-            <source
-              media='(orientation: portrait) and (min-width:600px)'
-              srcSet={githubImgL}
-            />
-            <source
-              media='(orientation: landscape) and (min-width:1000px)'
-              srcSet={githubImgL}
-            />
-            <source
-              media='(orientation: portrait) and (min-width:360px)'
-              srcSet={githubImgM}
-            />
-            <source
-              media='(orientation: landscape) and (min-width:600px)'
-              srcSet={githubImgM}
-            />
+          <div className='contact__social-git'>
             <motion.img
               whileHover={{ scale: 1.1 }}
-              src={githubImgS}
+              src='/images/icons/github.png'
               alt='github'
             />
-          </picture>
+          </div>
         </Link>
       </div>
 
